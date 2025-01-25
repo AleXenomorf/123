@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Фитнес-программы от Андрея. Тренировки для мужчин и женщин, советы по питанию, добавки и многое другое. Присоединяйтесь сейчас!">
+    <title>Андрей - Unique Fitness Programs</title>
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        nav .logo p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            background-color: #f4a261;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #e07b3a;
+        }
+
+        nav .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .auth-buttons button {
+            margin-left: 20px;
+        }
+
+        nav .auth-buttons button:focus {
+            outline: none;
+        }
+
+        
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        .modal-content input,
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content button {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Андрей</h1>
+                <p>Unique Fitness Programs</p>
+            </div>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#programs">Программы</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="registerButton">Регистрация</button>
+                <button id="loginButton">Вход</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <h2>Добро пожаловать в мои фитнес-программы!</h2>
+        <p>Если вы хотите стать сильнее, улучшить форму или похудеть — я готов помочь вам достичь ваших целей с помощью моих уникальных тренировочных программ и полезных советов по питанию!</p>
+    </section>
+
+    <section id="about">
+        <h2>Обо мне</h2>
+        <p>Меня зовут Андрей. Я начал тренироваться с 14 лет, не имея тренера и нужных условий. Всё, что я делал — это экспериментировал на себе, изучал новые методы и тренировочные лайфхаки. Моя цель — передать свой опыт и знания всем, кто хочет достичь максимальных результатов!</p>
+        <ul>
+            <li>20K+ клиентов по всему миру</li>
+            <li>10+ лет спортивной карьеры</li>
+            <li>30 миллионов подписчиков в социальных сетях</li>
+            <li>Мастер международного пауэрлифтинга и становой тяги</li>
+        </ul>
+    </section>
+
+    <section id="programs">
+        <h2>Мои программы</h2>
+        
+        <div class="program">
+            <h3>Программа для мужчин</h3>
+            <p>Тренировка для мужчин, стремящихся к набору мышечной массы и увеличению силы. Программа включает в себя домашние и тренажерные тренировки с подробными инструкциями.</p>
+            <p><strong>Цена: $59</strong></p>
+            <button>Присоединиться</button>
+        </div>
+
+        <div class="program">
+            <h3>Программа для женщин</h3>
+            <p>Программа для женщин, направленная на улучшение формы, укрепление мышц и снижение веса. Включает тренировки для дома и спортзала с использованием минимального оборудования.</p>
+            <p><strong>Цена: $49</strong></p>
+            <button>Присоединиться</button>
+        </div>
+
+        <div class="program">
+            <h3>Pro Программа</h3>
+            <p>Для тех, кто уже имеет опыт и хочет вывести свою физическую форму на новый уровень. Программа включает продвинутые тренировки с высоким уровнем нагрузки.</p>
+            <p><strong>Цена: $89</strong></p>
+            <button>Присоединиться</button>
+        </div>
+    </section>
+
+    <section id="nutrition">
+        <h2>Питание и добавки</h2>
+        <p>Я разработал уникальный гид по питанию, где рассказываю, как правильно рассчитывать калории для набора массы и сжигания жира. Программа включает рекомендации по добавкам и витаминам, которые использую сам.</p>
+        <ul>
+            <li>Руководство по добавкам</li>
+            <li>Планы питания для разных целей</li>
+            <li>Рецепты и советы по питанию для веганов</li>
+        </ul>
+    </section>
+
+    <section id="video">
+        <h2>Видео-уроки</h2>
+        <p>Мои видео-уроки охватывают все аспекты тренировочного процесса, включая техники выполнения упражнений, восстановление и мои личные лайфхаки.</p>
+        <ul>
+            <li>Мои тренировки: принципы и методы</li>
+            <li>Как правильно восстанавливаться после нагрузок</li>
+            <li>Мои секреты для эффективных тренировок</li>
+        </ul>
+    </section>
+
+    <section id="pricing">
+        <h2>Цены</h2>
+        <ul>
+            <li>Программа для мужчин: $59</li>
+            <li>Программа для женщин: $49</li>
+            <li>Pro Программа: $89</li>
+        </ul>
+        <p>Вы получите доступ к программе на 6 месяцев и сможете заниматься в удобное для вас время. Программа включает подробные инструкции и видеоматериалы.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь со мной, чтобы начать тренировки или задать вопросы:</p>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Telegram</a></li>
+            <li><a href="#">Email</a></li>
+        </ul>
+
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваша почта" required>
+            <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+            <button type="submit">Отправить сообщение</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Я согласен с <a href="#">политикой конфиденциальности</a>.</p>
+    </footer>
+
+   
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        
+        document.getElementById('registerButton').onclick = function() {
+            document.getElementById('registerModal').style.display = 'block';
+        };
+
+        document.getElementById('loginButton').onclick = function() {
+            document.getElementById('loginModal').style.display = 'block';
+        };
+
+        
+        document.getElementById('closeRegister').onclick = function() {
+            document.getElementById('registerModal').style.display = 'none';
+        };
+
+        document.getElementById('closeLogin').onclick = function() {
+            document.getElementById('loginModal').style.display = 'none';
+        };
+
+        
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('registerModal')) {
+                document.getElementById('registerModal').style.display = "none";
+            }
+            if (event.target == document.getElementById('loginModal')) {
+                document.getElementById('loginModal').style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
